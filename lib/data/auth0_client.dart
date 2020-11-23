@@ -9,8 +9,8 @@ class Auth0Client {
   int connectTimeout;
   int sendTimeout;
   int receiveTimeout;
-  bool userTokenInterceptor = false;
-  bool userLoggerInterceptor = false;
+  bool userTokenInterceptor;
+  bool userLoggerInterceptor;
 
   Auth0Client({
     this.clientId,
@@ -20,8 +20,8 @@ class Auth0Client {
     this.connectTimeout,
     this.sendTimeout,
     this.receiveTimeout,
-    this.userLoggerInterceptor,
-    this.userTokenInterceptor
+    this.userLoggerInterceptor = false,
+    this.userTokenInterceptor = false
   }) {
     assert(clientId != null);
     assert(domain != null);
